@@ -122,7 +122,6 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
@@ -135,7 +134,14 @@ public class LoginForm extends javax.swing.JFrame {
             
             if(rs.next())
             {
+                
+                MainMenu menu = new MainMenu();
                 JOptionPane.showMessageDialog(null,"Password Matched");
+                while(true)
+                {
+                menu.setVisible(true);
+                }
+                //setVisible(false);
             }
             else
             {
@@ -185,7 +191,9 @@ public class LoginForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginForm().setVisible(true);
+                //new LoginForm().setVisible(true);
+                new MainMenu().setVisible(true);
+                        
             }
         });
     }
